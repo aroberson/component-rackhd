@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright © 2017 Dell Inc. or its subsidiaries.  All Rights Reserved  -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.dell.cpsd</groupId>
+    <artifactId>gateway-rackhd</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <parent>
+        <groupId>com.dell.cpsd</groupId>
+        <artifactId>root-parent</artifactId>
+        <version>1.0.1</version>
+    </parent>
+
+    <licenses>
+        <license>
+            <name>Eclipse Public License - v 1.0</name>
+            <url>http://www.eclipse.org/legal/epl-v10.html</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Stephen Knight</name>
+            <email>stephen.knight@dell.com </email>
+            <organization>com.dell.cpsd</organization>
+            <organizationUrl>https://github.com/rousef42</organizationUrl>
+        </developer>
+        
+        <developer>
+            <name>Desmond Collins</name>
+            <email>desmond.collins@dell.com</email>
+            <organization>com.dell.cpsd</organization>
+            <organizationUrl>https://github.com/sknightvce</organizationUrl>
+        </developer>
+        
+        <developer>
+            <name>Mark O Callaghan</name>
+            <email>mark.ocallaghan2@dell.com </email>
+            <organization>com.dell.cpsd</organization>
+            <organizationUrl>https://github.com/ocallm1</organizationUrl>
+        </developer>
+        
+        <developer>
+            <name>Fergal McMahon</name>
+            <email>Fergal.McMahon@dell.com  </email>
+            <organization>com.dell.cpsd</organization>
+            <organizationUrl>https://github.com/FergalmcmVCE </organizationUrl>
+        </developer>
+        
+        <developer>
+            <name>Qin Wang</name>
+            <email>qin.wang2@dell.com </email>
+            <organization>com.dell.cpsd</organization>
+            <organizationUrl>https://github.com/wangq6</organizationUrl>
+        </developer>
+        
+        <developer>
+            <name>Manuel Murillo</name>
+            <email>manuel.murillo@dell.com</email>
+            <organization>com.dell.cpsd</organization>
+            <organizationUrl>https://github.com/murilm</organizationUrl>
+        </developer>
+        
+        <developer>
+            <name>Bheemesh Sannapareddi</name>
+            <email>b.sannapareddi@dell.com </email>
+            <organization>com.dell.cpsd</organization>
+            <organizationUrl>https://github.com/sannab2</organizationUrl>
+        </developer>
+        
+        <developer>
+            <name>Purna Chamala</name>
+            <email>purna.chamala@dell.com</email>
+            <organization>com.dell.cpsd</organization>
+            <organizationUrl>https://github.com/chamap1</organizationUrl>
+        </developer>
+
+        <developer>
+            <name>Derek Goggin</name>
+            <email>derek.goggin@dell.com </email>
+            <organization>com.dell.cpsd</organization>
+            <organizationUrl>https://github.com/delgcork</organizationUrl>
+        </developer>
+
+        <developer>
+            <name>Jeff Cheng</name>
+            <email>jeffery.cheng@dell.com </email>
+            <organization>com.dell.cpsd</organization>
+            <organizationUrl>https://github.com/jccheng78</organizationUrl>
+        </developer>
+
+        <developer>
+            <name>Joseph O'Leary</name>
+            <email>joseph.oleary@dell.com </email>
+            <organization>com.dell.cpsd</organization>
+            <organizationUrl>https://github.com/joz73</organizationUrl>
+        </developer>
+        
+   </developers>
+
+    <scm>
+        <connection>scm:git:https://github.com/dellemc-symphony/component-rackhd.git</connection>
+        <developerConnection>scm:git:https://github.com/dellemc-symphony/component-rackhd.git
+        </developerConnection>
+        <url>https://github.com/dellemc-symphony/component-rackhd/tree/master</url>
+        <tag>HEAD</tag>
+    </scm>
+   
+    <properties>
+        <common-dependencies.version>1.2.0</common-dependencies.version>
+        <component-common-validators.version>1.0.0</component-common-validators.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.dell.cpsd</groupId>
+                <artifactId>common-dependencies</artifactId>
+                <version>${common-dependencies.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.dell.cpsd.component</groupId>
+            <artifactId>component-common-validators</artifactId>
+            <version>${component-common-validators.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+        </dependency>
+
+        <!-- ====================================================================== -->
+        <!-- Unit Test Support -->
+        <!-- ====================================================================== -->
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <!-- Disable annotation processing for ourselves. -->
+                    <!-- Needed for EnumAnnotationProcessor -->
+                    <compilerArgument>-proc:none</compilerArgument>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.4</version>
+                <executions>
+                    <execution>
+                        <id>test</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${basedir}/target/generated-sources</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc-plugin.version}</version>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>${project.basedir}</directory>
+                <includes>
+                    <include>LICENSE.md</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+</project>
