@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/dellemc-symphony/component-rackhd.svg?branch=master)](https://travis-ci.org/dellemc-symphony/component-rackhd)
 [![Slack](http://community.codedellemc.com/badge.svg)](https://codecommunity.slack.com/messages/symphony)
 [![codecov](https://codecov.io/gh/dellemc-symphony/component-rackhd/branch/master/graph/badge.svg?token=Z6CayoOF8Z)](https://codecov.io/gh/dellemc-symphony/component-rackhd)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.dell.cpsd/component-rackhd/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.dell.cpsd/component-rackhd)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.dell.cpsd/gateway-rackhd/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.dell.cpsd/component-rackhd)
 [![Semver](http://img.shields.io/SemVer/2.0.0.png)](http://semver.org/spec/v2.0.0.html)
 
 
