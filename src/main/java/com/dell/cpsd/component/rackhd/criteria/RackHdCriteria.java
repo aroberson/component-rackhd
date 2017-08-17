@@ -31,6 +31,10 @@ public class RackHdCriteria
 
     private Boolean isAuth;
 
+    private String nodeId;
+
+    private String serverFilePath;
+
     /**
      *
      * @param hostname
@@ -68,7 +72,9 @@ public class RackHdCriteria
             final String password,
             final String port,
             final boolean isHttps,
-            final Boolean isAuth)
+            final Boolean isAuth,
+            final String nodeId,
+            final String serverFilePath)
     {
         this.hostname = hostname;
         this.username = username;
@@ -76,6 +82,8 @@ public class RackHdCriteria
         this.port = port;
         this.isHttps = isHttps;
         this.isAuth = isAuth;
+        this.nodeId = nodeId;
+        this.serverFilePath = serverFilePath;
     }
 
     public String getHostname()
@@ -104,4 +112,8 @@ public class RackHdCriteria
     }
 
     public Boolean isAuth() {return isAuth;}
+
+    public String getNodeId() {return nodeId;}
+
+    public String getServerFilePath() {return serverFilePath;}
 }

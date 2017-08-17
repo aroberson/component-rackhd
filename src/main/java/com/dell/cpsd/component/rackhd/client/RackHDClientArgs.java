@@ -47,6 +47,12 @@ public class RackHDClientArgs implements CliParameters
     @Parameter(names = {"-h", "--help"}, descriptionKey = "PARAM_HELP", help = true)
     private boolean help;
 
+    @Parameter(names = {"-ni", "--nodeId"}, descriptionKey = "NODE_ID")
+    private String nodeId;
+
+    @Parameter(names = {"-sp", "--serverPath"}, descriptionKey = "SERVER_PATH_FIRMWARE_FILE")
+    private String serverPath;
+
     public String getIpAddress()
     {
         return ipAddress;
@@ -128,4 +134,25 @@ public class RackHDClientArgs implements CliParameters
     {
         this.auth = auth;
     }
+
+    public String getNodeId()
+    {
+        return nodeId;
+    }
+
+    public void setNodeId(final String nodeId)
+    {
+        this.nodeId = nodeId;
+    }
+
+    public String getServerPath()
+    {
+        return serverPath;
+    }
+
+    public void setServerPath(final String serverPath)
+    {
+        this.serverPath = serverPath;
+    }
+
 }

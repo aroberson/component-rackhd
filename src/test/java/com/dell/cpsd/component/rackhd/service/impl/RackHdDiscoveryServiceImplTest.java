@@ -62,7 +62,7 @@ public class RackHdDiscoveryServiceImplTest
     @Before
     public void setup() throws JSONException
     {
-        rackHdCriteria = new RackHdCriteria("testHost", "testUser", "testPw", "testPort", true, null);
+        rackHdCriteria = new RackHdCriteria("testHost", "testUser", "testPw", "testPort", true, null, "123", "/bla/bla.exe");
 
         AuthorizationResponse authorizationResponse = new AuthorizationResponse();
         authorizationResponse.setMessage("TestMessage");

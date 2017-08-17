@@ -53,7 +53,7 @@ public class RackHdAuthenticationServiceImplTest
     public void setup()
     {
         rackHdAuthenticationServiceImpl = new RackHdAuthenticationServiceImpl(restTemplate);
-        rackHdCriteria = new RackHdCriteria("testHost", "testUser", "testPw", "testPort", true, null);
+        rackHdCriteria = new RackHdCriteria("testHost", "testUser", "testPw", "testPort", true, null, "1234", "/bla/bla.exe");
     }
 
     @Test
@@ -67,10 +67,11 @@ public class RackHdAuthenticationServiceImplTest
     @Test
     public void testCreateWithAuth()
     {
-        RackHdCriteria  rackHdCriteria = new RackHdCriteria("testHost", "testUser", "testPw", "testPort", true, true);
+        RackHdCriteria  rackHdCriteria = new RackHdCriteria("testHost", "testUser", "testPw", "testPort", true, true, "1234", "/bla/bla.exe");
 
         Assert.assertNotNull(rackHdCriteria);
         Assert.assertNotNull(rackHdCriteria.isAuth());
+        Assert.assertNotNull(rackHdCriteria.getNodeId());
     }
 
     @Test(expected = NullPointerException.class)
@@ -109,7 +110,7 @@ public class RackHdAuthenticationServiceImplTest
     @Test
     public void authenticateAndCreateHeadersWithoutHttps() throws RackHdException, JSONException
     {
-        rackHdCriteria = new RackHdCriteria("testHost", "testUser", "testPw", "testPort", false, true);
+        rackHdCriteria = new RackHdCriteria("testHost", "testUser", "testPw", "testPort", false, true, "1234", "/bla/bla.exe");
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);

@@ -82,16 +82,19 @@ public class RackHDClient extends CliBase<RackHDClientArgs, RackHDModel>
     }
 
     @Override
-    protected RackHDModel invokeService() throws Exception
+    protected RackHDModel invokeService() throws Exception, RackHdException
     {
         RackHdCriteria criteria = createCriteria(cliParameters);
         ValidationResult validationResult = rackHdDiscoveryService.validate(criteria);
 
         final UpdateFirmwareWorkflowRequest workflowRequest = new UpdateFirmwareWorkflowRequest(
-                criteria.getUsername(), criteria.getPassword(),"/home/vce/firmware/BIOS_605TD_WN64_2.1.5.EXE");
+                criteria.getUsername(), criteria.getPassword(), criteria.getServerFilePath());
 
         // nodeID should be passed in via the prompt
-        rackHdInstallerService.postWorkflowForNode(workflowRequest, criteria, "5975fe06449fb0eb7a70d07a");
+        if (criteria.getNodeId()!=null && !criteria.getNodeId().equals(""))
+        {
+            rackHdInstallerService.postWorkflowForNode(workflowRequest, criteria, criteria.getNodeId());
+        }
 
         if (validationResult.isSuccess())
         {
@@ -103,10 +106,15 @@ public class RackHDClient extends CliBase<RackHDClientArgs, RackHDModel>
         }
     }
 
-    private RackHdCriteria createCriteria(RackHDClientArgs args)
+    /**
+     *
+     * @param rackHDClientArgs
+     * @return
+     */
+    private RackHdCriteria createCriteria(RackHDClientArgs rackHDClientArgs)
     {
-        RackHdCriteria criteria = new RackHdCriteria(args.getIpAddress(), args.getUserName(), args.getPassword(), args.getPort(),
-                args.isHttp(), args.isAuth());
+        RackHdCriteria criteria = new RackHdCriteria(rackHDClientArgs.getIpAddress(), rackHDClientArgs.getUserName(), rackHDClientArgs.getPassword(), rackHDClientArgs.getPort(),
+                rackHDClientArgs.isHttp(), rackHDClientArgs.isAuth(), rackHDClientArgs.getNodeId(), rackHDClientArgs.getServerPath() );
         return criteria;
     }
 }
